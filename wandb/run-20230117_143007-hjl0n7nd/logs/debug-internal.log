@@ -1,0 +1,111 @@
+2023-01-17 14:30:08,528 INFO    MainThread:7772 [internal.py:wandb_internal():90] W&B internal server running at pid: 7772, started at: 2023-01-17 14:30:08.528851
+2023-01-17 14:30:08,530 INFO    WriterThread:7772 [datastore.py:open_for_write():75] open: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\run-hjl0n7nd.wandb
+2023-01-17 14:30:08,713 DEBUG   SenderThread:7772 [sender.py:send():236] send: header
+2023-01-17 14:30:08,714 DEBUG   SenderThread:7772 [sender.py:send():236] send: run
+2023-01-17 14:30:08,721 INFO    SenderThread:7772 [sender.py:_maybe_setup_resume():493] checking resume status for None/train/hjl0n7nd
+2023-01-17 14:30:09,675 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: check_version
+2023-01-17 14:30:09,680 INFO    SenderThread:7772 [dir_watcher.py:__init__():216] watching files in: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files
+2023-01-17 14:30:09,681 INFO    SenderThread:7772 [sender.py:_start_run_threads():815] run started: hjl0n7nd with start time 1673937007
+2023-01-17 14:30:09,681 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:09,681 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:09,681 DEBUG   SenderThread:7772 [sender.py:send_request():250] send_request: check_version
+2023-01-17 14:30:10,029 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: run_start
+2023-01-17 14:30:10,044 DEBUG   HandlerThread:7772 [meta.py:__init__():35] meta init
+2023-01-17 14:30:10,044 DEBUG   HandlerThread:7772 [meta.py:__init__():49] meta init done
+2023-01-17 14:30:10,044 DEBUG   HandlerThread:7772 [meta.py:probe():209] probe
+2023-01-17 14:30:10,071 DEBUG   HandlerThread:7772 [meta.py:_setup_git():199] setup git
+2023-01-17 14:30:10,129 DEBUG   HandlerThread:7772 [meta.py:_setup_git():206] setup git done
+2023-01-17 14:30:10,129 DEBUG   HandlerThread:7772 [meta.py:_save_pip():53] save pip
+2023-01-17 14:30:10,129 DEBUG   HandlerThread:7772 [meta.py:_save_pip():67] save pip done
+2023-01-17 14:30:10,130 DEBUG   HandlerThread:7772 [meta.py:_save_conda():74] save conda
+2023-01-17 14:30:10,683 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\requirements.txt
+2023-01-17 14:30:10,684 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\conda-environment.yaml
+2023-01-17 14:30:10,684 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-summary.json
+2023-01-17 14:30:15,713 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:17,731 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:19,748 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:20,641 DEBUG   HandlerThread:7772 [meta.py:_save_conda():84] save conda done
+2023-01-17 14:30:20,641 DEBUG   HandlerThread:7772 [meta.py:probe():247] probe done
+2023-01-17 14:30:20,758 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\conda-environment.yaml
+2023-01-17 14:30:20,759 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-metadata.json
+2023-01-17 14:30:20,947 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: stop_status
+2023-01-17 14:30:20,947 DEBUG   SenderThread:7772 [sender.py:send_request():250] send_request: stop_status
+2023-01-17 14:30:21,207 DEBUG   SenderThread:7772 [sender.py:send():236] send: telemetry
+2023-01-17 14:30:21,207 DEBUG   SenderThread:7772 [sender.py:send():236] send: config
+2023-01-17 14:30:21,208 DEBUG   SenderThread:7772 [sender.py:send():236] send: files
+2023-01-17 14:30:21,209 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-metadata.json with policy now
+2023-01-17 14:30:21,944 INFO    Thread-17 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AppData\Local\Temp\tmp5ecdf27jwandb\mjp9hu22-wandb-metadata.json
+2023-01-17 14:30:25,799 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:27,814 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:35,059 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: stop_status
+2023-01-17 14:30:35,059 DEBUG   SenderThread:7772 [sender.py:send_request():250] send_request: stop_status
+2023-01-17 14:30:35,914 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:37,939 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:39,959 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\config.yaml
+2023-01-17 14:30:39,960 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:41,433 DEBUG   SenderThread:7772 [sender.py:send():236] send: stats
+2023-01-17 14:30:41,977 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:43,878 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:43,879 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:43,879 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:43,880 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:43,880 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:43,880 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:43,881 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:43,881 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:43,881 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:43,882 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:43,993 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:43,994 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-summary.json
+2023-01-17 14:30:44,453 DEBUG   SenderThread:7772 [sender.py:send():236] send: files
+2023-01-17 14:30:44,453 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file media\images\Labels_0_fb506b7c92f3cad6513e.jpg with policy now
+2023-01-17 14:30:44,454 DEBUG   SenderThread:7772 [sender.py:send():236] send: files
+2023-01-17 14:30:44,455 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file media\images\Labels_0_99efdf7773706fadd3cd.jpg with policy now
+2023-01-17 14:30:44,475 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: partial_history
+2023-01-17 14:30:44,476 DEBUG   SenderThread:7772 [sender.py:send():236] send: history
+2023-01-17 14:30:44,477 DEBUG   SenderThread:7772 [sender.py:send():236] send: summary
+2023-01-17 14:30:44,477 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:30:45,005 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-summary.json
+2023-01-17 14:30:45,005 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\media\images\Labels_0_fb506b7c92f3cad6513e.jpg
+2023-01-17 14:30:45,005 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\media\images\Labels_0_99efdf7773706fadd3cd.jpg
+2023-01-17 14:30:45,005 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\media
+2023-01-17 14:30:45,005 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_created():269] file/dir created: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\media\images
+2023-01-17 14:30:45,607 INFO    Thread-19 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AppData\Local\Temp\tmp5ecdf27jwandb\m0qkl1ve-media/images/Labels_0_99efdf7773706fadd3cd.jpg
+2023-01-17 14:30:45,660 INFO    Thread-18 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AppData\Local\Temp\tmp5ecdf27jwandb\1xjjgroh-media/images/Labels_0_fb506b7c92f3cad6513e.jpg
+2023-01-17 14:30:46,014 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:48,019 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:30:50,362 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: stop_status
+2023-01-17 14:30:50,362 DEBUG   SenderThread:7772 [sender.py:send_request():250] send_request: stop_status
+2023-01-17 14:31:05,648 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: stop_status
+2023-01-17 14:31:05,648 DEBUG   SenderThread:7772 [sender.py:send_request():250] send_request: stop_status
+2023-01-17 14:31:14,702 DEBUG   SenderThread:7772 [sender.py:send():236] send: stats
+2023-01-17 14:31:18,465 DEBUG   SenderThread:7772 [sender.py:send():236] send: telemetry
+2023-01-17 14:31:18,674 DEBUG   SenderThread:7772 [sender.py:send():236] send: exit
+2023-01-17 14:31:18,675 INFO    SenderThread:7772 [sender.py:send_exit():372] handling exit code: 1
+2023-01-17 14:31:18,675 INFO    SenderThread:7772 [sender.py:send_exit():374] handling runtime: 68
+2023-01-17 14:31:18,675 DEBUG   HandlerThread:7772 [handler.py:handle_request():140] handle_request: shutdown
+2023-01-17 14:31:18,675 INFO    HandlerThread:7772 [handler.py:finish():806] shutting down handler
+2023-01-17 14:31:18,675 INFO    SenderThread:7772 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2023-01-17 14:31:18,676 INFO    SenderThread:7772 [sender.py:send_exit():380] send defer
+2023-01-17 14:31:18,676 INFO    SenderThread:7772 [sender.py:finish():1114] shutting down sender
+2023-01-17 14:31:18,676 INFO    SenderThread:7772 [dir_watcher.py:finish():353] shutting down directory watcher
+2023-01-17 14:31:19,188 INFO    Thread-11 :7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:31:19,188 INFO    SenderThread:7772 [dir_watcher.py:_on_file_modified():286] file/dir modified: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-summary.json
+2023-01-17 14:31:19,189 INFO    SenderThread:7772 [dir_watcher.py:finish():383] scan: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files
+2023-01-17 14:31:19,189 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\conda-environment.yaml conda-environment.yaml
+2023-01-17 14:31:19,189 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\config.yaml config.yaml
+2023-01-17 14:31:19,190 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log output.log
+2023-01-17 14:31:19,194 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\requirements.txt requirements.txt
+2023-01-17 14:31:19,196 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-metadata.json wandb-metadata.json
+2023-01-17 14:31:19,196 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-summary.json wandb-summary.json
+2023-01-17 14:31:19,199 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\media\images\Labels_0_99efdf7773706fadd3cd.jpg media\images\Labels_0_99efdf7773706fadd3cd.jpg
+2023-01-17 14:31:19,201 INFO    SenderThread:7772 [dir_watcher.py:finish():397] scan save: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\media\images\Labels_0_fb506b7c92f3cad6513e.jpg media\images\Labels_0_fb506b7c92f3cad6513e.jpg
+2023-01-17 14:31:19,201 INFO    SenderThread:7772 [file_pusher.py:finish():171] shutting down file pusher
+2023-01-17 14:31:19,201 INFO    SenderThread:7772 [file_pusher.py:join():176] waiting for file pusher
+2023-01-17 14:31:19,684 INFO    WriterThread:7772 [datastore.py:close():279] close: C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\run-hjl0n7nd.wandb
+2023-01-17 14:31:19,927 INFO    Thread-21 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\config.yaml
+2023-01-17 14:31:19,929 INFO    Thread-24 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\wandb-summary.json
+2023-01-17 14:31:19,954 INFO    Thread-20 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\conda-environment.yaml
+2023-01-17 14:31:19,998 INFO    Thread-23 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\requirements.txt
+2023-01-17 14:31:20,043 INFO    Thread-22 :7772 [upload_job.py:push():138] Uploaded file C:\Users\ZME\AI\Auto_train\wandb\run-20230117_143007-hjl0n7nd\files\output.log
+2023-01-17 14:31:21,703 INFO    MainThread:7772 [internal.py:handle_exit():80] Internal process exited

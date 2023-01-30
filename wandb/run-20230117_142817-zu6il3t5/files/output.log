@@ -1,0 +1,113 @@
+Overriding model.yaml nc=80 with nc=6
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Conv                      [3, 32, 6, 2, 2]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     18816  models.common.C3                        [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  2    115712  models.common.C3                        [128, 128, 2]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    625152  models.common.C3                        [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1   1182720  models.common.C3                        [512, 512, 1]
+  9                -1  1    656896  models.common.SPPF                      [512, 512, 5]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     29667  models.yolo.Detect                      [6, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+Model summary: 214 layers, 7035811 parameters, 7035811 gradients, 16.0 GFLOPs
+Transferred 343/349 items from yolov5s.pt
+[34m[1mAMP: [39m[22mchecks passed
+[34m[1moptimizer:[39m[22m SGD(lr=0.01) with parameter groups 57 weight(decay=0.0), 60 weight(decay=0.0005), 60 bias
+[34m[1mtrain: [39m[22mScanning C:\Users\ZME\AI\Auto_train\datasets\train\t1\labels... 14 images, 0 backgrounds, 0 corrupt: 100%|██████████| 14/14 [00:05<00:00,  2.42it/s]
+[34m[1mtrain: [39m[22mNew cache created: C:\Users\ZME\AI\Auto_train\datasets\train\t1\labels.cache
+
+[34m[1mval: [39m[22mScanning C:\Users\ZME\AI\Auto_train\datasets\valid\t1\labels... 5 images, 0 backgrounds, 0 corrupt: 100%|██████████| 5/5 [00:07<00:00,  1.60s/it]
+[34m[1mval: [39m[22mNew cache created: C:\Users\ZME\AI\Auto_train\datasets\valid\t1\labels.cache
+[34m[1mAutoAnchor: [39m[22m3.62 anchors/target, 1.000 Best Possible Recall (BPR). Current anchors are a good fit to dataset
+Plotting labels to runs\train\exp38\labels.jpg...
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mruns\train\exp38
+Starting training for 100 epochs...
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+
+       0/99      3.09G     0.1262    0.03953    0.05654        127        640: 100%|██████████| 1/1 [00:03<00:00,  3.82s/it]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00,  2.21it/s]
+                   all          5         21    0.00488        0.2     0.0058    0.00116
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       1/99      3.16G     0.1242    0.03947    0.05791        122        640: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 12.05it/s]
+                   all          5         21    0.00741      0.333    0.00999    0.00223
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       2/99      3.16G     0.1256    0.03669    0.05787        100        640: 100%|██████████| 1/1 [00:00<00:00,  6.41it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 11.76it/s]
+                   all          5         21    0.00728      0.333     0.0106    0.00236
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       3/99      3.16G     0.1246    0.03827    0.05699        107        640: 100%|██████████| 1/1 [00:00<00:00,  6.49it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 14.08it/s]
+                   all          5         21    0.00718      0.333     0.0113     0.0025
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       4/99      3.16G     0.1234    0.03789    0.05635        104        640: 100%|██████████| 1/1 [00:00<00:00,  6.41it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 14.93it/s]
+                   all          5         21    0.00706      0.333     0.0137    0.00299
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       5/99      3.16G     0.1223    0.03945    0.05439        117        640: 100%|██████████| 1/1 [00:00<00:00,  6.49it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 14.49it/s]
+                   all          5         21    0.00686      0.333     0.0169    0.00407
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       6/99      3.16G      0.121    0.03912     0.0537        116        640: 100%|██████████| 1/1 [00:00<00:00,  6.49it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 14.71it/s]
+                   all          5         21    0.00667      0.333     0.0202    0.00482
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       7/99      3.16G     0.1216    0.03903    0.05375        127        640: 100%|██████████| 1/1 [00:00<00:00,  6.49it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 14.93it/s]
+                   all          5         21     0.0062      0.333     0.0255    0.00591
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       8/99      3.16G     0.1194    0.04109    0.05284        125        640: 100%|██████████| 1/1 [00:00<00:00,  6.31it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 15.38it/s]
+                   all          5         21    0.00602      0.333      0.032    0.00669
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+       9/99      3.16G     0.1166    0.04281    0.05118        146        640: 100%|██████████| 1/1 [00:00<00:00,  6.41it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00,  2.00it/s]
+                   all          5         21    0.00591      0.333     0.0434    0.00893
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+      10/99      3.16G     0.1127    0.04449    0.04997        120        640: 100%|██████████| 1/1 [00:00<00:00,  4.69it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s]
+                   all          5         21    0.00557      0.333      0.075     0.0148
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+      11/99      3.16G      0.112    0.04381    0.05128        108        640: 100%|██████████| 1/1 [00:00<00:00,  6.25it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 15.87it/s]
+                   all          5         21    0.00548      0.333      0.137     0.0288
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+      12/99      3.16G     0.1096    0.04158    0.04755        105        640: 100%|██████████| 1/1 [00:00<00:00,  6.17it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 13.70it/s]
+                   all          5         21    0.00522      0.333      0.184     0.0389
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+      13/99      3.16G     0.1098    0.04088    0.04573        118        640: 100%|██████████| 1/1 [00:00<00:00,  6.25it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:00<00:00, 13.70it/s]
+                   all          5         21    0.00495      0.333      0.275      0.071
+Traceback (most recent call last):
+  File "C:\Users\ZME\AI\Auto_train\train.py", line 634, in <module>
+    main(opt)
+  File "C:\Users\ZME\AI\Auto_train\train.py", line 528, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "C:\Users\ZME\AI\Auto_train\train.py", line 385, in train
+    torch.save(ckpt, last)
+  File "C:\Users\ZME\miniconda3\lib\site-packages\torch\serialization.py", line 379, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "C:\Users\ZME\miniconda3\lib\site-packages\torch\serialization.py", line 589, in _save
+    pickler.dump(obj)
+  File "C:\Users\ZME\miniconda3\lib\site-packages\torch\serialization.py", line 544, in persistent_id
+    if isinstance(obj, torch.storage._TypedStorage) or torch.is_storage(obj):
+KeyboardInterrupt

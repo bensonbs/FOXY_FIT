@@ -1,0 +1,27 @@
+{
+    "os": "Windows-10-10.0.19044-SP0",
+    "python": "3.9.12",
+    "heartbeatAt": "2023-01-17T06:30:10.044689",
+    "startedAt": "2023-01-17T06:30:07.136831",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--data",
+        "datasets\\coco.yaml"
+    ],
+    "state": "running",
+    "program": "C:\\Users\\ZME\\AI\\Auto_train\\train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/ultralytics/yolov5",
+        "commit": "589edc7b012d45a5c8ad6231d7716f88cb6e43ca"
+    },
+    "email": "sungbohsun@gmail.com",
+    "root": "C:/Users/ZME/AI/Auto_train",
+    "host": "DESKTOP-877N66O",
+    "username": "ZME",
+    "executable": "C:\\Users\\ZME\\miniconda3\\python.exe"
+}
