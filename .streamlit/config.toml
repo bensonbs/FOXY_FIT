@@ -1,0 +1,6 @@
+[server]
+maxUploadSize = 10240
+port=8501 # change port number. By default streamlit uses 8501 port
+headless=true # This will eliminate automatically open browser
+[browser] # This ip and port will show in command prompt
+serverPort = 8501

@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  foxy_fit_v1:
+    image: benson/foxy_fit:1.0
+    container_name: foxy_fit_v1
+    command: /bin/bash -c "cd FOXY_FIT && streamlit run main.py"
+    volumes:
+      - /home/mefae1:/workspace
+      - /mnt:/mnt/share
+    ports:
+      - 8502:8501
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['1']
+            capabilities: [gpu]

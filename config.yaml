@@ -1,9 +1,9 @@
 credentials:
   usernames:
-    MEFAE1:
+    mefae1:
       email: 
-      name: MEFAE1
-      password: '$2b$12$Bsgc1DDt1QTnMBBmX0oXY.Pi8LEiUpSRZprlMu0l3LESgpYeRlUS6' # To be replaced with hashed password
+      name: mefae1
+      password: '$2b$12$NngCSXRe5F9rxf2SkirEw.6xRr6Pt/iHhDvznIJ0cJCp1JsMVffIC' # To be replaced with hashed password
     MEFAD1:
       email: 
       name: MEFAD1

@@ -883,7 +883,7 @@ if __name__ == "__main__":
                             zip_files(username)
                     
                             dts = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-                            with open(f'{user}/output.zip', "rb") as file:
+                            with open(f'{username}/output.zip', "rb") as file:
                                 btn = st.download_button(
                                         label="Download",
                                         data=file,
