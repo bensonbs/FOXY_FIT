@@ -1,0 +1,4 @@
+# Usage: pip install -r requirements-2.txt --extra-index-url https://download.pytorch.org/whl/cu113
+
+torch==2.0.0+cu117
+torchvision==0.15.1+cu117
