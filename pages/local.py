@@ -34,10 +34,10 @@ from torch.optim import lr_scheduler
 from tqdm import tqdm
 
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[0]  # YOLOv5 root directory
+ROOT = os.path.dirname(FILE.parents[0])  # YOLOv5 root directory
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
-ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
+ROOT = Path(os.path.relpath(ROOT, Path.cwd()))
 
 import val as validate  # for end-of-epoch mAP
 from models.experimental import attempt_load
@@ -70,6 +70,7 @@ from streamlit_lottie import st_lottie,st_lottie_spinner
 from stqdm import stqdm
 import json
 import subprocess
+
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
@@ -418,7 +419,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
                     'updates': ema.updates,
                     'optimizer': optimizer.state_dict(),
                     'opt': vars(opt),
-                    'git': 'branch',  # {remote, branch, commit} if a git repo
+                    'git': GIT_INFO,  # {remote, branch, commit} if a git repo
                     'date': datetime.now().isoformat()}
 
                 # Save last, best and delete
@@ -668,17 +669,45 @@ def run(**kwargs):
     main(opt)
     return opt
 
+def login_init():
+    with open('./config.yaml') as file:
+        config = yaml.load(file, Loader=yaml.Loader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+
+    return authenticator
+
+
+def check_status():
+    with open('users.txt','r') as f:
+        usr = f.readlines()
+    return usr
+
+def register(username):
+    with open('users.txt','w') as f:
+        f.write(username)
+
+def freed():
+    with open('users.txt','w') as f:
+        f.write('')
+
 def unzip_data(uploaded_files):
     ar = st.empty()
     for uploaded_file in uploaded_files:
-        ar.write(f'正在解壓縮檔案 {uploaded_file}')
-        zip_path = os.path.join(username,'zip',uploaded_file.name)
-        with open(zip_path, "wb") as binary_file:
+        ar.info(f'正在解壓縮檔案 {uploaded_file}')
+        zip_path = os.path.join('/mnt/share/foxy_fit',uploaded_file)
+        # with open(zip_path, "wb") as binary_file:
             # Write bytes to file
-            binary_file.write(uploaded_file.getvalue())
+            # binary_file.write(uploaded_file.getvalue())
         # zip_path = os.path.join(username,'zip',uploaded_file)
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            temp_path = os.path.join(username,'temp/') + ''.join(uploaded_file.name.split('.')[:-1])
+            temp_path = os.path.join(username,'temp/') + ''.join(uploaded_file.split('.')[:-1])
             # temp_path = os.path.join(username,'temp/') + ''.join(uploaded_file.split('.')[:-1])
             check_path(temp_path)
             zip_ref.extractall(temp_path)
@@ -687,7 +716,7 @@ def make_training_data(username):
     ar = st.empty()           
     projects = os.listdir(os.path.join(username,'temp'))
     for project in projects:
-        ar.write(f'正在創建訓練資料 {project}')
+        ar.info(f'正在創建訓練資料 {project}')
         with open(os.path.join(username,'temp',project,'train.txt'),'r') as f:
             txts = f.readlines()
 
@@ -770,27 +799,30 @@ def load_lottieurl(url: str):
 import requests
 if __name__ == "__main__":
 
-
-
     with st.sidebar:
         st.image('pic/3.png')
         st.image('pic/4.png')
         #Login GUI
-        user, username = 'admin','admin'
+        user , username = 'admin', 'admin'
 
-    # Sucess Login
+
+    usr = check_status()
+
+
     with st.sidebar:
         opt = parse_opt()
         st.write(f'歡迎 *{user}*')
+
 
     col = st.columns(2)
     L1 = col[0].empty()
 
     with col[0]:
-        st.markdown('### 訓練資料上傳')
-        uploaded_files = st.file_uploader("Choose a file",accept_multiple_files =True,type='zip')
+        st.markdown('### 讀取本地訓練資料 `/mnt/share`')
+        # uploaded_files = st.file_uploader("Choose a file",accept_multiple_files =True,type='zip')
 
-        # uploaded_files = os.listdir(os.path.join(username,'zip'))
+        uploaded_files = os.listdir('/mnt/share/foxy_fit')
+        st.write(uploaded_files)
         if len(uploaded_files) == 0:
             for path in ['temp','zip','datasets','runs']:  
                 remove(os.path.join(username,path))
@@ -799,26 +831,26 @@ if __name__ == "__main__":
                 for path in ['temp','zip','datasets','runs']:  
                     check_path(os.path.join(username,path))
 
-                try:
-                    unzip_data(uploaded_files)
-                    make_training_data(username)
-                except:
-                    st.error('上傳資料格式錯誤',icon='🐙')
-                    st.markdown('#### 請使用[CVAT](http://192.168.0.102:8080/projects?page=1)標註工具輸出標註')
-                    st.markdown('#### *Export format* 選擇 `YOLOv1.1` 並勾選 *Save images*')
-                    st.image('pic/m2.png')
-                    st.markdown('''
-                    ### Example
-                    ```
-                    ─ obj_train_data
-                        |   └─obj_train_data
-                        |      └─pic1.png
-                        |      └─pic1.txt
-                        └─obj.data
-                        └─obj.names
-                        └─train.txt
-                    ```
-                        ''')
+                # try:
+                unzip_data(uploaded_files)
+                make_training_data(username)
+                # except:
+                #     st.error('上傳資料格式錯誤',icon='🐙')
+                #     st.markdown('#### 請使用[CVAT](http://192.168.0.102:8080/projects?page=1)標註工具輸出標註')
+                #     st.markdown('#### *Export format* 選擇 `YOLOv1.1` 並勾選 *Save images*')
+                #     st.image('pic/m2.png')
+                #     st.markdown('''
+                #     ### Example
+                #     ```
+                #     ─ obj_train_data
+                #         |   └─obj_train_data
+                #         |      └─pic1.png
+                #         |      └─pic1.txt
+                #         └─obj.data
+                #         └─obj.names
+                #         └─train.txt
+                #     ```
+                #         ''')
                 with open('./lottie/foxy.json','r') as f:
                     lottie_json = json.loads(f.read())
                 with L1:
@@ -831,10 +863,13 @@ if __name__ == "__main__":
 
                             try:
                                 remove(os.path.join(username,'runs'))
+                                register(username)
                                 main(opt)
                             except AssertionError as error:
+                                freed()
                                 col[0].write(error)
 
+                            freed()
 
                             v1.success('訓練成功', icon="🤗")
                             v2.empty()
